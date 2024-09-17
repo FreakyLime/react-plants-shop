@@ -3,19 +3,16 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, updateQuantity } from './CartSlice';
 import './CartItem.css';
+import ProductPrice from './Components/ProductPrice/ProductPrice';
+import ProductPriceInCart from './Components/ProductPrice/ProductPriceInCart.module.css'; 
 
 const CartItem = ({ onContinueShopping }) => {
   const cart = useSelector(state => state.cart.items);
   const dispatch = useDispatch();
 
-  const parseCost = (cost) => {
-    // Remove the dollar sign and convert to a number
-    return parseFloat(cost.replace('$', '')) || 0;
-  };
-
   const calculateTotalCost = () => {
     return cart.reduce((total, item) => {
-      const cost = parseCost(item.cost);
+      const cost = item.sale ?? item.cost;
       const quantity = Number(item.quantity) || 0;
       return total + (cost * quantity);
     }, 0);
@@ -42,7 +39,7 @@ const CartItem = ({ onContinueShopping }) => {
       <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalCost().toFixed(2)}</h2>
       <div>
         {cart.map(item => {
-          const itemCost = parseCost(item.cost);
+          const itemCost = item.sale ?? item.cost;
           const itemTotal = itemCost * (Number(item.quantity) || 0);
           
           return (
@@ -50,7 +47,7 @@ const CartItem = ({ onContinueShopping }) => {
               <img className="cart-item-image" src={item.image} alt={item.name} />
               <div className="cart-item-details">
                 <div className="cart-item-name">{item.name}</div>
-                <div className="cart-item-cost">{item.cost}</div>
+                <ProductPrice cost={item.cost} sale={item.sale} className={ProductPriceInCart.productPrice} />
                 <div className="cart-item-quantity">
                   <button className="cart-item-button cart-item-button-dec" onClick={() => handleDecrement(item)}>-</button>
                   <span className="cart-item-quantity-value">{item.quantity}</span>

@@ -86,12 +86,6 @@ body {
     margin-bottom: 10px;
 }
 
-.product-price {
-    color: #e74c3c;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
 .product-image {
     max-width: 100%;
     height: 200px; /* Adjust height for better consistency */
@@ -112,7 +106,7 @@ body {
 }
 
 /* Pseudo-elements - Sale badge */
-.product-card::before {
+.product-card.on-sale::before {
     content: "SALE";
     background-color: #e74c3c;
     color: #fff;

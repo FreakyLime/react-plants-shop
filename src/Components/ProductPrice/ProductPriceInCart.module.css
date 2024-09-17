@@ -1,0 +1,16 @@
+.productPrice {
+    color: #000000;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.oldPrice {
+    text-decoration: line-through;
+    font-style: none;
+}
+
+.sale {
+    color: #e74c3c;
+    padding-left: 1.3rem;
+}

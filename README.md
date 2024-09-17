@@ -81,6 +81,7 @@ The app is automatically built and pushed to the `gh-pages` branch for deploymen
 - [Redux](https://redux.js.org/) - A predictable state container for JavaScript apps
 - [Vite](https://vitejs.dev/) - A fast build tool for modern web development
 - [gh-pages](https://www.npmjs.com/package/gh-pages) - For deploying to GitHub Pages
+- [GitHub Gist](https://gist.github.com/) - Used to fetch product data as JSON
 
 ## Contributing
 
