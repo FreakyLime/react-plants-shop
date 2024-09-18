@@ -1,5 +1,6 @@
 import { useState,useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { fetchProducts } from './Api';
 import './ProductList.css'
 import CartItem from './CartItem';
 import { addItem } from './CartSlice'; 
@@ -51,28 +52,13 @@ function ProductList() {
     };
 
     useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                const response = await fetch(
-                    'https://gist.githubusercontent.com/FreakyLime/e1b456fc5466df0b94704cab04d7bef4/raw/9d4ee8ea770794ece53ac82b517d547c2179e995/react-plants-shop-products', 
-                    {
-                        method: 'GET',
-                        cache: 'no-store',
-                    }
-                );
-                if (!response.ok) {
-                    throw new Error('Failed to fetch products');
-                }
-                const data = await response.json();
-                setProducts(data);
-            } catch (error) {
-                setError(error.message);
-            } finally {
-                setLoading(false);
-            }
+        const loadProducts = async () => {
+            const data = await fetchProducts();
+            setProducts(data);
+            setLoading(false);
         };
 
-        fetchProducts();
+        loadProducts();
     }, []);
 
 
