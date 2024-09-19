@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchProducts } from './Api';
+import { fetchProducts } from '../../Api';
 import './ProductList.css';
-import CartItem from './CartItem';
-import { addItem } from './CartSlice'; 
-import ProductPrice from './Components/ProductPrice/ProductPrice';
-import productPriceStyles from './Components/ProductPrice/ProductPrice.module.css'; 
+import CartItem from '../CartItem';
+import { addItem } from '../../Reducers/CartSlice'; 
+import ProductPrice from '../ProductPrice/ProductPrice';
+import productPriceStyles from '../ProductPrice/ProductPrice.module.css'; 
 
 function ProductList({ setShowCart, showCart }) {
     const [addedToCart, setAddedToCart] = useState({});

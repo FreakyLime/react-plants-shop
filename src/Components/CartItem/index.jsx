@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeItem, updateQuantity } from './CartSlice';
+import { removeItem, updateQuantity } from '../../Reducers/CartSlice';
 import './CartItem.css';
-import ProductPrice from './Components/ProductPrice/ProductPrice';
-import ProductPriceInCart from './Components/ProductPrice/ProductPriceInCart.module.css'; 
+import ProductPrice from '../ProductPrice/ProductPrice';
+import ProductPriceInCart from '../ProductPrice/ProductPriceInCart.module.css'; 
 
 const CartItem = ({ onContinueShopping }) => {
   const cart = useSelector(state => state.cart.items);

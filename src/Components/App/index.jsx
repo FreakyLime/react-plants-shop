@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
-import ProductList from './ProductList';
 import './App.css';
-import AboutUs from './AboutUs';
-import Navbar from './Components/Navbar';
+import ProductList from '../ProductList';
+import AboutUs from '../AboutUs';
+import Navbar from '../Navbar';
 
 function App() {
   
