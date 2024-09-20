@@ -1,14 +1,14 @@
+import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchProducts } from '../../Api';
 import './ProductList.css';
 import CartItem from '../CartItem';
-import { addItem } from '../../Reducers/CartSlice'; 
+import { addItem } from '../../Reducers/cartActions';
 import ProductPrice from '../ProductPrice/ProductPrice';
-import productPriceStyles from '../ProductPrice/ProductPrice.module.css'; 
+import productPriceStyles from '../ProductPrice/ProductPrice.module.css';
 
 function ProductList({ setShowCart, showCart }) {
-    const [addedToCart, setAddedToCart] = useState({});
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -36,10 +36,6 @@ function ProductList({ setShowCart, showCart }) {
 
     const handleAddToCart = (product) => {
         dispatch(addItem(product));
-        setAddedToCart((prevState) => ({
-            ...prevState,
-            [product.name]: true,
-        }));
     };
 
     if (loading) {
@@ -77,5 +73,10 @@ function ProductList({ setShowCart, showCart }) {
         </div>
     );
 }
+
+ProductList.propTypes = {
+    setShowCart: PropTypes.func,
+    showCart: PropTypes.bool,
+};
 
 export default ProductList;

@@ -1,7 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeItem, updateQuantity } from '../../Reducers/CartSlice';
+import { removeItem, updateQuantity } from '../../Reducers/cartActions';
 import './CartItem.css';
 import ProductPrice from '../ProductPrice/ProductPrice';
 import ProductPriceInCart from '../ProductPrice/ProductPriceInCart.module.css'; 
