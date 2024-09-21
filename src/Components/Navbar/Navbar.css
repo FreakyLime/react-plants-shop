@@ -12,6 +12,7 @@
     font-size: 1.5em;
     font-weight: bold;
     line-height: 35px;
+    cursor: pointer;
 }
 
 .navbar-brand img {
@@ -69,17 +70,30 @@
         background-color: #333;
         flex-direction: column;
         width: 100%;
-        height: calc(100vh - 60px);
         justify-content: center;
         align-items: center;
-        display: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+        z-index: 3;
+        padding-top: 20px;
     }
 
     .nav-links.open {
-        display: flex;
+        max-height: 300px;
+    }
+
+    .nav-links.open a:last-child {
+        margin-bottom: 20px;
     }
 
     .burger {
         display: flex;
+    }
+}
+
+@media (max-width: 380px) {
+    h3 {
+        font-size: 1em;
     }
 }

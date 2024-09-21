@@ -88,8 +88,6 @@
   background-color: #45a049;
 }
 
-
-
 @media screen and (max-width: 1758px) {
   .content {
     display: flex;
@@ -121,6 +119,24 @@
     flex-direction: column;
     justify-content: center;
     gap: 0px;
-    height: 350px;
+    height: 290px;
+  }
+}
+
+@media (max-height: 800px) {
+  .landing_content {
+    justify-content: start;
+    margin-top: 5%;
+  }
+}
+
+@media (max-width: 380px) {
+  .content h1 {
+    font-size: 2em;
+  }
+
+  .landing_content {
+    justify-content: start;
+    height: 230px;
   }
 }
