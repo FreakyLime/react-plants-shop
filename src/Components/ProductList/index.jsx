@@ -5,7 +5,7 @@ import { fetchProducts } from '../../Api';
 import './ProductList.css';
 import CartItem from '../CartItem';
 import { addItem } from '../../Reducers/cartActions';
-import ProductPrice from '../ProductPrice/ProductPrice';
+import ProductPrice from '../ProductPrice';
 import productPriceStyles from '../ProductPrice/ProductPrice.module.css';
 
 function ProductList({ setShowCart, showCart }) {

@@ -39,22 +39,19 @@ export const CartSlice = createSlice({
 
       saveCartToLocalStorage(state.items);
     },
-
     removeItem: (state, action) => {
       const itemId = action.payload;
       const updatedItems = state.items.filter(item => item.id !== itemId);
 
       if (updatedItems.length === state.items.length) {
-        console.warn(`Item with name "${itemId}" not found.`);
+        console.warn(`Item with ID "${itemId}" not found.`);
       } else {
         state.items = updatedItems;
         saveCartToLocalStorage(state.items);
       }
     },
-
     updateQuantity: (state, action) => {
       const { id, quantity } = action.payload;
-
       const quantityNumber = Number(quantity);
       if (isNaN(quantityNumber) || quantityNumber < 1) {
         return;
@@ -69,4 +66,5 @@ export const CartSlice = createSlice({
   },
 });
 
+export const { addItem, removeItem, updateQuantity } = CartSlice.actions;
 export default CartSlice.reducer;

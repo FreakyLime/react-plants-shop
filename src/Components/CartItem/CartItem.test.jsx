@@ -22,7 +22,7 @@ describe('CartItem Component', () => {
       },
     });
 
-    store.dispatch = jest.fn(); // Mock dispatch function
+    store.dispatch = jest.fn();
   });
 
   test('renders cart items and buttons', () => {

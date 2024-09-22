@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, updateQuantity } from '../../Reducers/cartActions';
 import './CartItem.css';
-import ProductPrice from '../ProductPrice/ProductPrice';
+import ProductPrice from '../ProductPrice';
 import ProductPriceInCart from '../ProductPrice/ProductPriceInCart.module.css'; 
 
 const CartItem = ({ onContinueShopping }) => {
