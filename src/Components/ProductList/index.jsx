@@ -52,7 +52,7 @@ function ProductList({ setShowCart, showCart }) {
                 <div className="product-grid">
                     {products.map((category, index) => (
                         <div key={index}>
-                            <h1><div>{category.category}</div></h1>
+                            <h1 className="category">{category.category}</h1>
                             <div className="product-list">
                                 {category.plants.map((item, itemIndex) => (
                                     <div className={`product-card ${item.sale ? 'on-sale' : ''}`} key={itemIndex}>

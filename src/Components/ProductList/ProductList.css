@@ -10,6 +10,11 @@ body {
     background-color: #f0f0f0;
 }
 
+.category {
+    padding: 20px;
+    padding-top: 10px;
+}
+
 .product-list-container {
     position: absolute;
     overflow-x: hidden;
@@ -22,6 +27,7 @@ body {
     overflow-y: auto;
     z-index: 2;
     backdrop-filter: blur(5px);
+    padding-bottom: 125px;
 }
 
 .product-list-container.visible {
@@ -31,9 +37,11 @@ body {
 .product-grid {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 80vw;
     align-items: center;
     justify-content: center;
+    flex-wrap: nowrap;
+    margin: 0 auto;
 }
 
 .product-list {
@@ -202,6 +210,12 @@ body {
     background-color: grey;
 }
 
+@media (max-width: 1900px) {
+    .product-grid {
+        width: 100vw
+    }
+}
+
 @media (max-width: 1200px) {
     .product-card {
         flex: 1 1 calc(33.33% - 20px);
@@ -215,8 +229,8 @@ body {
     }
 
     .product-card {
-        flex: 1 1 calc(50% - 20px);
-        max-width: calc(50% - 20px);
+        flex: 1 1 calc(45vw - 20px);
+        max-width: calc(45vw - 20px);
     }
 
     .navbar {
@@ -237,5 +251,16 @@ body {
 
     .ul div {
         text-align: center;
+    }
+}
+
+@media (max-width: 560px) {
+    .product-list {
+        gap: 10px
+    }
+
+    .product-card {
+        flex: 1 1 80vw;
+        max-width: 80vw;
     }
 }
